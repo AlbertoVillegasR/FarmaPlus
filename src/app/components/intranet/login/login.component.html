@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+<div class="card" >
+    <div class="card-body">
+        <h5 class="titulo mb-3">LOGIN
+        </h5>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text">
+                    <i class="fas fa-user-circle" [class.green-icon]="this.form.get('user')?.valid"
+                        [class.red-icon]="this.form.get('user')?.invalid && this.form.get('user')?.touched"></i>
+                </span>
+                <input type="text" formControlName="user" class="form-control" placeholder="Usuario">
+            </div>
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text">
+                    <i class="fas fa-key" [class.green-icon]="this.form.get('password')?.valid"
+                    [class.red-icon]="this.form.get('password')?.invalid && this.form.get('password')?.touched"></i>
+                </span>
+                <input type="text" formControlName="password" class="form-control" placeholder="Contraseña">
+            </div>
+            <div class="d-grid gap-2">
+                <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit">
+                    <i class="fas fa-database"></i> &nbsp;Aceptar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+        </div>
+    </div>
+</div>

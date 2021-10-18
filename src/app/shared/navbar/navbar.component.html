@@ -1,0 +1,7 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand titulo" href="#">Sistema de Monitoreo - FARMAPLUS</a>
+        <a *ngIf="login === false" class="navbar-brand titulo" href="/admin">login</a>
+        <a *ngIf="login === true" class="navbar-brand titulo" href="/home">Salir</a>
+      </div>
+  </nav>

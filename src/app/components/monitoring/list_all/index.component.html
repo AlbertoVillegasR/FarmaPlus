@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Lista de monitoreo</span>
+            <h5 style="margin-left: 500px; margin-top: 5%;" *ngIf="data.length == 0">No hay datos para mostrar</h5>
+            <table *ngIf="data.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Nro</th>
+                    <th>id</th>
+                    <th>Temperatura</th>
+                    <th>Mascarilla</th>
+                    <th>dia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of data">
+                    <td>{{ list.id_employees }}</td>
+                    <td>{{ list.temperature }}</td>
+                    <td>{{ list.mask}}</td>
+                    <td>{{ list.day}}</td>
+                    <!-- <td>
+                      <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editEmpleado/', empleado.id]"></i>
+                      <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td> -->
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

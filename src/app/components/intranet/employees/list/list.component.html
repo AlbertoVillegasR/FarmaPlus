@@ -1,0 +1,34 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">elementa de Empleados</span>
+            <h5 style="margin-left: 500px; margin-top: 5%;" *ngIf="data.length == 0">No hay datos para mostrar</h5>
+            <table *ngIf="data.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>id_employees</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>DNI</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let element of data">
+                    <td>{{ element.id_employees }}</td>
+                    <td>{{ element.names }}</td>
+                    <td>{{ element.first_surname}} {{element.last_surname}}</td>
+                    <td>{{ element.dni}}</td>
+                    <td>{{ getStatus(element.status_id)}}</td>
+                    <td>
+                      <i (click)="editarTarjeta(element)" class="far fa-edit fa-lg text-info mr-2"></i>
+                      <i *ngIf="element.status_id === status.enabled" (click)="disabled(element.id,element)" class="far fa fa-times fa-lg text-info mr-2"></i>
+                      <i *ngIf="element.status_id === status.disabled" (click)="enabled(element.id,element)" class="far fa fa-check fa-lg text-info mr-2"></i>
+                      <i (click)="remove(element.id)" class="far fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
